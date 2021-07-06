@@ -2,6 +2,7 @@ package com.demoqa.automation.steps;
 
 import com.demoqa.automation.models.DataInjection;
 import com.demoqa.automation.pageobjects.PracticeFormPage;
+import com.demoqa.automation.utils.JavaScript;
 import com.demoqa.automation.utils.Times;
 import net.thucydides.core.annotations.Step;
 
@@ -21,15 +22,14 @@ public class PracticeFormPageSteps {
         practiceFormpage.setFirstNameInput(dataInject.getFName());
         practiceFormpage.setLastNameInput(dataInject.getLastName());
         practiceFormpage.setEmailInput(dataInject.getEmailF());
-        practiceFormpage.setGenderRatioInput(1);
-        practiceFormpage.setMobileNumberInput(dataInject.getMobileNumber());
-        practiceFormpage.setDateOfBirthInput("01 Jun 2020");
-        practiceFormpage.setSubjectInput(dataInject.getSubject());
-        practiceFormpage.setHobbiesInput(2);
-        practiceFormpage.setUploadPicture("C:\\Users\\G525487\\Downloads\\ordenMedica.pdf");
+        JavaScript.clickJS(practiceFormpage.getDriver(),practiceFormpage.genderRatioInput);
+        practiceFormpage.setMobileNumberInput(dataInject.getMobile());
+        practiceFormpage.setDateOfBirthInput("01 Jun 1988");
+        JavaScript.clickJS(practiceFormpage.getDriver(),practiceFormpage.hobbiesInput);
+        practiceFormpage.setUploadPicture(dataInject.getImageUpload());
         practiceFormpage.setCurrentAddressInput(dataInject.getCurrentAd());
-        practiceFormpage.setStateInput();
-        practiceFormpage.setCityInput();
-        practiceFormpage.setSubmitButton();
+        /*practiceFormpage.setStateInput("Haryana");
+        practiceFormpage.setCityInput("Panipat");*/
+        JavaScript.clickJS(practiceFormpage.getDriver(), practiceFormpage.submitButton);
     }
 }

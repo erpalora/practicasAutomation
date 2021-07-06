@@ -1,14 +1,12 @@
 package com.demoqa.automation.pageobjects;
 
+import com.demoqa.automation.utils.JavaScript;
 import com.demoqa.automation.utils.Times;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 import org.apache.bcel.generic.Select;
 import org.apache.bcel.generic.Visitor;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NotFoundException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 import java.util.List;
 
@@ -30,7 +28,7 @@ public class PracticeFormPage extends PageObject {
     public By subjectInput = By.id("subjectsContainer");
     public By hobbiesInput = By.id("hobbiesWrapper");
     public By uploadPicture = By.id("uploadPicture");
-    public By currentAddressInput = By.id("Current Address");
+    public By currentAddressInput = By.id("currentAddress");
     public By stateInput = By.id("state");
     public By cityInput = By.id("city");
     public By submitButton = By.id("submit");
@@ -44,7 +42,7 @@ public class PracticeFormPage extends PageObject {
     public void setEmailInput(String email){
         getDriver().findElement(emailInput).sendKeys(email);
     }
-   // public void setGenderRatioInput(int option) { }
+   /* public void setGenderRatioInput(int option) { }
    public void setGenderRatioInput(int option) throws InterruptedException {
        List<WebElement> radios = getDriver().findElements(genderRatioInput);
        if (option > 0 && option <= radios.size()) {
@@ -53,19 +51,19 @@ public class PracticeFormPage extends PageObject {
        } else {
            throw new NotFoundException("option " + option + " not found");
        }
-   }
+   }*/
 
     public void setMobileNumberInput(String mobileN){
         getDriver().findElement(mobileNumberInput).sendKeys(mobileN);
 
     }
     public void setDateOfBirthInput(String birthDay){
-        getDriver().findElement(dateOfBirthInput).sendKeys(birthDay);
+     getDriver().findElement(dateOfBirthInput).sendKeys(Keys.chord(Keys.CONTROL, "a"),birthDay,Keys.ENTER);
     }
     public void setSubjectInput(String subjectI){
-        getDriver().findElement(subjectInput).sendKeys(subjectI);
+        getDriver().findElement(subjectInput).sendKeys(Keys.chord(Keys.CONTROL, "a"),subjectI,Keys.ENTER);
     }
-    public void setHobbiesInput(int rbutton) throws InterruptedException {
+    /*public void setHobbiesInput(int rbutton) throws InterruptedException {
         List<WebElement> ratio = getDriver().findElements(genderRatioInput);
         if (rbutton > 0 && rbutton <= ratio.size()) {
             ratio.get(rbutton - 1);
@@ -74,21 +72,22 @@ public class PracticeFormPage extends PageObject {
             throw new NotFoundException("option " + rbutton + " not found");
         }
         getDriver().findElement(hobbiesInput).click();
-    }
-    public void setUploadPicture(String absolutePath){
+    }*/
+    public void setUploadPicture(String absolutePath) throws InterruptedException {
         getDriver().findElement(uploadPicture).sendKeys(absolutePath);
+        Times.waitFor(2000);
     }
-    public void setCurrentAddressInput(String currentA){
+    public void setCurrentAddressInput(String currentA) throws InterruptedException {
         getDriver().findElement(currentAddressInput).sendKeys(currentA);
+        Times.waitFor(2000);
     }
-    public  void setStateInput(){
-        getDriver().findElement(stateInput).click();
+    public  void setStateInput(String state){
+        getDriver().findElement(stateInput).sendKeys(Keys.chord(Keys.CONTROL, "a"),state,Keys.TAB);
     }
-    public  void setCityInput(){
-        getDriver().findElement(cityInput).click();
+    public  void setCityInput(String city){
+        getDriver().findElement(cityInput).sendKeys(city,Keys.TAB);
     }
     public void setSubmitButton(){
-        getDriver().findElement(submitButton).submit();
     }
 
 }

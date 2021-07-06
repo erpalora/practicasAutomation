@@ -72,14 +72,15 @@ public class DataInjection {
         this.fName = faker.name().firstName();
         this.lastNameF = faker.name().lastName();
         this.emailF = faker.internet().emailAddress();
-        this.mobile = faker.phoneNumber().cellPhone();
-        this.dateBirth = faker.date().birthday().toString();
-        this.subject = faker.name().username();
+        this.mobile = "3014042552";
+        this.dateBirth = "05 jUN 2021";
+        this.subject ="Math";
         this.currentAd = faker.address().fullAddress();
+        this.imageUpload ="C:\\\\Users\\\\G525487\\\\Documents\\\\Automation test SQA\\\\EjerciciosAutomation\\\\practiceMyFPomErica\\\\src\\\\main\\\\resources\\\\images\\\\ericaImg.jpg";
     }
 
     // practice Form dataInjection
-    private String fName, lastNameF, emailF, mobile, dateBirth, subject, hobbies, currentAd;
+    private String fName, lastNameF, emailF, mobile, dateBirth, subject, hobbies, currentAd, imageUpload;
      public String getFName(){ return fName; }
      public String getLastNameF(){ return lastNameF; }
      public String getEmailF(){ return emailF; }
@@ -88,4 +89,5 @@ public class DataInjection {
      public String getSubject(){ return subject; }
      public String getHobbies(){ return hobbies; }
      public String getCurrentAd(){ return currentAd; }
+     public String getImageUpload(){return imageUpload;}
 }
