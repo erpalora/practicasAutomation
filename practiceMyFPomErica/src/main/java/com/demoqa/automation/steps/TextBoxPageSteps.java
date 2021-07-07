@@ -28,5 +28,12 @@ public class TextBoxPageSteps {
         Times.waitFor(1000);
         JavaScript.clickJS(textBoxPage.getDriver(), textBoxPage.submitButton);
     }
+    @Step
+    public void validationsTextBox(){
+        textBoxPage.validations(dataInjection.getExtensionName()+dataInjection.getName()+" "+dataInjection.getLastName(),
+                dataInjection.getExtensionEmail()+dataInjection.getEmail(),
+                dataInjection.getExtensionCurrentAddress()+dataInjection.getCurrentAddress(),
+                dataInjection.getExtensionPermanentAddress()+dataInjection.getPermanentAddress());
+    }
 
 }

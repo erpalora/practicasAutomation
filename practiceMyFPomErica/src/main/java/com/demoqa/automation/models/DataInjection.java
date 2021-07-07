@@ -7,8 +7,9 @@ import java.util.Locale;
 public class DataInjection {
     Faker faker = new Faker(new Locale("en-US"));
 
-    private String name, email, lastName, birthday, mobileNumber,currentAddress,
-            permanentAddress, extensionName, extensionEmail, extensionCurrentAddress, extensionPermanentAddress;
+    private String name, email, lastName,currentAddress,
+            permanentAddress, extensionName, extensionEmail,
+            extensionCurrentAddress, extensionPermanentAddress;
 
     public String getName() {
         return name;
@@ -34,14 +35,6 @@ public class DataInjection {
         return permanentAddress;
     }
 
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public String getMobileNumber() {
-        return mobileNumber;
-    }
-
     public String getExtensionEmail() {
         return extensionEmail;
     }
@@ -55,31 +48,31 @@ public class DataInjection {
     }
 
     public DataInjection(){
+        //dynamic data for text box page
         this.name = faker.name().name();
         this.email = faker.internet().emailAddress();
         this.lastName = faker.name().lastName();
-        this.birthday = faker.date().birthday().toString();
-        this.mobileNumber = faker.phoneNumber().phoneNumber();
         this.currentAddress = faker.address().secondaryAddress();
         this.permanentAddress = faker.address().fullAddress();
         this.extensionName = "Name:";
         this.extensionEmail = "Email:";
-        this.extensionCurrentAddress = "Current Address:";
-        this.extensionPermanentAddress = "Permanent Address:";
+        this.extensionCurrentAddress = "Current Address :";
+        this.extensionPermanentAddress = "Permananet Address :";
 
-        // data injection dinamic pratice form
+        // data injection dynamic and static data for practice form
 
         this.fName = faker.name().firstName();
         this.lastNameF = faker.name().lastName();
         this.emailF = faker.internet().emailAddress();
         this.mobile = "3014042552";
         this.dateBirth = "05 jUN 2021";
-        this.subject ="Math";
+        this.subject ="English";
         this.currentAd = faker.address().fullAddress();
-        this.imageUpload ="C:\\\\Users\\\\G525487\\\\Documents\\\\Automation test SQA\\\\EjerciciosAutomation\\\\practiceMyFPomErica\\\\src\\\\main\\\\resources\\\\images\\\\ericaImg.jpg";
+        this.imageUpload ="images\\ericaImg.jpg";
     }
 
     // practice Form dataInjection
+
     private String fName, lastNameF, emailF, mobile, dateBirth, subject, hobbies, currentAd, imageUpload;
      public String getFName(){ return fName; }
      public String getLastNameF(){ return lastNameF; }

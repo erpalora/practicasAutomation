@@ -5,6 +5,7 @@ import com.demoqa.automation.pageobjects.PracticeFormPage;
 import com.demoqa.automation.utils.JavaScript;
 import com.demoqa.automation.utils.Times;
 import net.thucydides.core.annotations.Step;
+import org.openqa.selenium.support.ui.Wait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,7 +14,9 @@ public class PracticeFormPageSteps {
     DataInjection dataInject = new DataInjection();
 
     @Step
-    public void openBrowser(){ practiceFormpage.open(); }
+    public void openBrowser() {
+        practiceFormpage.open();
+    }
 
     @Step
     public void fillFieldsInTheFormPage() throws InterruptedException {
@@ -22,14 +25,16 @@ public class PracticeFormPageSteps {
         practiceFormpage.setFirstNameInput(dataInject.getFName());
         practiceFormpage.setLastNameInput(dataInject.getLastName());
         practiceFormpage.setEmailInput(dataInject.getEmailF());
-        JavaScript.clickJS(practiceFormpage.getDriver(),practiceFormpage.genderRatioInput);
+        JavaScript.clickJS(practiceFormpage.getDriver(), practiceFormpage.genderRatioInput);
         practiceFormpage.setMobileNumberInput(dataInject.getMobile());
         practiceFormpage.setDateOfBirthInput("01 Jun 1988");
-        JavaScript.clickJS(practiceFormpage.getDriver(),practiceFormpage.hobbiesInput);
+        JavaScript.clickJS(practiceFormpage.getDriver(), practiceFormpage.hobbiesInput);
         practiceFormpage.setUploadPicture(dataInject.getImageUpload());
         practiceFormpage.setCurrentAddressInput(dataInject.getCurrentAd());
-        /*practiceFormpage.setStateInput("Haryana");
-        practiceFormpage.setCityInput("Panipat");*/
+        practiceFormpage.setStateInput("Haryana");
+        practiceFormpage.setCityInput("Panipat");
         JavaScript.clickJS(practiceFormpage.getDriver(), practiceFormpage.submitButton);
+        Times.waitFor(5000);
     }
+
 }

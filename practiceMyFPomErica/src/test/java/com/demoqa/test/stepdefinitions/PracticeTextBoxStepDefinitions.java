@@ -27,6 +27,7 @@ public class PracticeTextBoxStepDefinitions {
 
     @Then("^he should see hin data down$")
     public void heShouldSeeHinDataDown() {
+        textBoxPageSteps.validationsTextBox();
 
     }
 }

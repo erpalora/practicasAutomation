@@ -11,12 +11,12 @@ public class TextBoxPage extends PageObject {
     public By fullNameInput = By.id("userName");
     public By emailInput = By.id("userEmail");
     public By currentAddressInput = By.id("currentAddress");
-    public By permanentAddressInput = By.id("currentAddress");
+    public By permanentAddressInput = By.id("permanentAddress");
     public By submitButton = By.id("submit");
-    public By fullNameValidation = By.id("userName");
-    public By emailValidation = By.id("userEmail");
-    public By currentAddressValidation = By.id("currentAddress");
-    public By permanentAddressValidation = By.id("currentAddress");
+    public By fullNameValidation = By.id("name");
+    public By emailValidation = By.id("email");
+    public By currentAddressValidation = By.xpath("//p[@id='currentAddress' and @class='mb-1']");
+    public By permanentAddressValidation = By.xpath("//p[@id='permanentAddress' and @class='mb-1']");
 
     public void sendFullNameInput(String fName){
         getDriver().findElement(fullNameInput).sendKeys(fName);
