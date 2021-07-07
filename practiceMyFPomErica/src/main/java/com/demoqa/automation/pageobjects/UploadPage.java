@@ -11,9 +11,11 @@ public class UploadPage extends PageObject {
     public By downLoadFile = By.id("downloadButton");
 
     public void setUploadFile(String absolutePath){
+        //download an image from absolute path
         getDriver().findElement(uploadFile).sendKeys(absolutePath);
     }
     public void setDownLoadFile(){
+        //upload a file
         getDriver().findElement(downLoadFile).submit();
     }
 }
