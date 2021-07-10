@@ -27,8 +27,8 @@ public class PracticeFormPage extends PageObject {
     public By hobbiesInput = By.id("hobbies-checkbox-1");
     public By uploadPicture = By.id("uploadPicture");
     public By currentAddressInput = By.id("currentAddress");
-    public By stateInput = By.id("state");
-    public By cityInput = By.id("city");
+    public By stateInput = By.id("react-select-3-input");
+    public By cityInput = By.id("react-select-4-input");
     public By submitButton = By.id("submit");
 
     public void setFirstNameInput(String fName){
