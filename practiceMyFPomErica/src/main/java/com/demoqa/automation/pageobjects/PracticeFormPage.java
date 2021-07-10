@@ -71,11 +71,9 @@ public class PracticeFormPage extends PageObject {
     public  void setStateInput(String state){
     getDriver().findElement(stateInput).sendKeys(state,Keys.TAB);
     }
-    public  void setCityInput(String city){
-        getDriver().findElement(stateInput).sendKeys(city,Keys.TAB);
+    public  void setCityInput(String city){ getDriver().findElement(cityInput).sendKeys(city,Keys.TAB);
     }
-    public void validationsForm(){
-    }
+
 }
 
 
